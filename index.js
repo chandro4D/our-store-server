@@ -6,8 +6,6 @@ require('dotenv').config();
 const port = process.env.PORT || 9000;
 
 // Middleware
-app.use(cors());
-app.use(express.json());
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ethrwxc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;

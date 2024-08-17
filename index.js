@@ -55,14 +55,7 @@ async function run() {
                 query.Price = { $gte: minPrice, ...(maxPrice && { $lte: maxPrice }) };
             }
 
-            const totalProducts = await productCollection.countDocuments(query);
-            const products = await productCollection.find(query)
-                .sort({ [sortField]: sortOrder })
-                .skip(skip)
-                .limit(limit)
-                .toArray();
-
-            const totalPages = Math.ceil(totalProducts / limit);
+            
 
             res.send({
                 products,
